@@ -12,9 +12,9 @@ var _componentsUtilsIntlMessage = require('./components/Utils/IntlMessage');
 
 var _componentsUtilsIntlMessage2 = _interopRequireDefault(_componentsUtilsIntlMessage);
 
-var _srcStoresIntl = require('./src/stores/Intl');
+var _fluxIntl = require('./flux/Intl');
 
-var _srcStoresIntl2 = _interopRequireDefault(_srcStoresIntl);
+var _fluxIntl2 = _interopRequireDefault(_fluxIntl);
 
 var _ = require('lodash');
 var should = require('should');
@@ -27,5 +27,5 @@ if (__DEV__) {
   Promise.longStackTraces();
   Error.stackTraceLimit = Infinity;
 }
-exports['default'] = { IntlMessage: _componentsUtilsIntlMessage2['default'], IntlFlux: _srcStoresIntl2['default'] };
+exports['default'] = { IntlMessage: _componentsUtilsIntlMessage2['default'], IntlFlux: _fluxIntl2['default'] };
 module.exports = exports['default'];
