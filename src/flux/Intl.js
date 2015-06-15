@@ -7,11 +7,11 @@ const createLocalIntlFlux = ({ req, window }, clientID, lifespan, intl) => {
   lifespan.onRelease(fluxLocalServer.lifespan.release);
   const localIntl = new LocalFlux.Client(fluxLocalServer, clientID);
   lifespan.onRelease(localIntl.lifespan.release);
+  const locale = __NODE__ ?
+    req.acceptsLanguages(['en', 'en_US', 'en-US', 'fr', 'fr_FR', 'fr-FR']) || 'en' :
+    window.navigator.userLanguage || window.navigator.language || 'en';
 
-  const localeNode = req.acceptsLanguages(['en', 'en_US', 'en-US', 'fr', 'fr_FR', 'fr-FR']) || 'en';
-  const localeBrowser = window.navigator.userLanguage || window.navigator.language || 'en';
-
-  const intlActions = new IntlActions(stores, {}, __NODE__ ? localeNode : localeBrowser, intl);
+  const intlActions = new IntlActions(stores, {}, locale, intl);
   fluxLocalServer.on('action', ({ path, params }) => {
     intlActions.performAction(path, params);
   }, fluxLocalServer.lifespan);

@@ -37,11 +37,9 @@ var createLocalIntlFlux = function createLocalIntlFlux(_ref, clientID, lifespan,
   lifespan.onRelease(fluxLocalServer.lifespan.release);
   var localIntl = new _nexusFluxAdaptersLocal2['default'].Client(fluxLocalServer, clientID);
   lifespan.onRelease(localIntl.lifespan.release);
+  var locale = __NODE__ ? req.acceptsLanguages(['en', 'en_US', 'en-US', 'fr', 'fr_FR', 'fr-FR']) || 'en' : window.navigator.userLanguage || window.navigator.language || 'en';
 
-  var localeNode = req.acceptsLanguages(['en', 'en_US', 'en-US', 'fr', 'fr_FR', 'fr-FR']) || 'en';
-  var localeBrowser = window.navigator.userLanguage || window.navigator.language || 'en';
-
-  var intlActions = new _actionsIntl2['default'](stores, {}, __NODE__ ? localeNode : localeBrowser, intl);
+  var intlActions = new _actionsIntl2['default'](stores, {}, locale, intl);
   fluxLocalServer.on('action', function (_ref2) {
     var path = _ref2.path;
     var params = _ref2.params;
