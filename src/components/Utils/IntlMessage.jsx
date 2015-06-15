@@ -20,8 +20,8 @@ const IntlMessage = React.createClass({
 
   getNexusBindings(props) {
     return {
-      locales: [this.getNexus().local, '/locales'],
-      intl: [this.getNexus().local, props.intl],
+      locales: [props.intl, '/locales'],
+      intl: [props.intl, '/intl'],
     };
   },
 

@@ -12,7 +12,10 @@ var _componentsUtilsIntlMessage = require('./components/Utils/IntlMessage');
 
 var _componentsUtilsIntlMessage2 = _interopRequireDefault(_componentsUtilsIntlMessage);
 
-require('babel/polyfill');
+var _srcStoresIntl = require('./src/stores/Intl');
+
+var _srcStoresIntl2 = _interopRequireDefault(_srcStoresIntl);
+
 var _ = require('lodash');
 var should = require('should');
 var Promise = (global || window).Promise = require('bluebird');
@@ -24,5 +27,5 @@ if (__DEV__) {
   Promise.longStackTraces();
   Error.stackTraceLimit = Infinity;
 }
-exports['default'] = { IntlMessage: _componentsUtilsIntlMessage2['default'] };
+exports['default'] = { IntlMessage: _componentsUtilsIntlMessage2['default'], IntlFlux: _srcStoresIntl2['default'] };
 module.exports = exports['default'];

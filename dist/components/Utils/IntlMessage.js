@@ -20,7 +20,6 @@ var _intlMessageformat = require('intl-messageformat');
 
 var _intlMessageformat2 = _interopRequireDefault(_intlMessageformat);
 
-require('babel/polyfill');
 var _ = require('lodash');
 var should = require('should');
 var Promise = (global || window).Promise = require('bluebird');
@@ -48,8 +47,8 @@ var IntlMessage = React.createClass({
 
   getNexusBindings: function getNexusBindings(props) {
     return {
-      locales: [this.getNexus().local, '/locales'],
-      intl: [this.getNexus().local, props.intl] };
+      locales: [props.intl, '/locales'],
+      intl: [props.intl, '/intl'] };
   },
 
   getLocales: function getLocales(locales) {
