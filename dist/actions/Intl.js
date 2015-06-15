@@ -2,15 +2,9 @@
 
 var _Object$defineProperty = require('babel-runtime/core-js/object/define-property')['default'];
 
-var _interopRequireDefault = require('babel-runtime/helpers/interop-require-default')['default'];
-
 _Object$defineProperty(exports, '__esModule', {
   value: true
 });
-
-var _componentsUtilsIntlMessage = require('./components/Utils/IntlMessage');
-
-var _componentsUtilsIntlMessage2 = _interopRequireDefault(_componentsUtilsIntlMessage);
 
 require('babel/polyfill');
 var _ = require('lodash');
@@ -24,5 +18,5 @@ if (__DEV__) {
   Promise.longStackTraces();
   Error.stackTraceLimit = Infinity;
 }
-exports['default'] = { IntlMessage: _componentsUtilsIntlMessage2['default'] };
+exports['default'] = false;
 module.exports = exports['default'];
