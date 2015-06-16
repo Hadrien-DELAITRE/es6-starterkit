@@ -1,4 +1,4 @@
 import IntlMessage from './components/Utils/IntlMessage';
-import IntlFlux from './flux/Intl';
+import createIntlFlux from './flux/Intl';
 
-export default { IntlMessage, IntlFlux };
+export default { IntlMessage, createIntlFlux };

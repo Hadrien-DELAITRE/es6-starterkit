@@ -27,5 +27,5 @@ if (__DEV__) {
   Promise.longStackTraces();
   Error.stackTraceLimit = Infinity;
 }
-exports['default'] = { IntlMessage: _componentsUtilsIntlMessage2['default'], IntlFlux: _fluxIntl2['default'] };
+exports['default'] = { IntlMessage: _componentsUtilsIntlMessage2['default'], createIntlFlux: _fluxIntl2['default'] };
 module.exports = exports['default'];
